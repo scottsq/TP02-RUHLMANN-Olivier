@@ -1,0 +1,11 @@
+.centered {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.val-error {
+    color: rgb(219, 62, 34);
+    font-size: .75em;
+}

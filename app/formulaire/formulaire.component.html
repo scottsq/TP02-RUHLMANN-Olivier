@@ -1,0 +1,7 @@
+<p>Remplis ce form!</p>
+<input type="text" [value]="txtName" (keyup)="onKeyUp($event)">
+<button [disabled]="!valid">Enregistrer</button>
+
+Prénom: {{prenom}}
+<input [(ngModel)]="prenom"/>
+<app-adresse [prenom]="prenom"></app-adresse>

@@ -1,0 +1,20 @@
+[
+    {
+        "id": 0,
+        "name": "Banana",
+        "price": 2.99,
+        "pic": "https://www.dolenz.co.nz/uploads/cache/img/rc/UlbhALJo//uploads/media/5ad5653d97b82/fruit-heros-banana-new.png"
+    },
+    {
+        "id": 1,
+        "name": "Orange",
+        "price": 5.99,
+        "pic": "https://www.searchpng.com/wp-content/uploads/2018/12/Orange-Fruit-PNG-Images.png"
+    },
+    {
+        "id": 2,
+        "name": "Apple",
+        "price": 4.99,
+        "pic": "https://i.pinimg.com/originals/ea/c9/96/eac9960a545ec495d88ce0554b9dd51a.png"
+    }
+]

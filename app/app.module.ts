@@ -10,6 +10,9 @@ import { TetiereComponent } from './tetiere/tetiere.component';
 import { FooterComponent } from './footer/footer.component';
 import { RecapComponent } from './recap/recap.component';
 import { PhonePipe } from './phone.pipe';
+import { HttpClientModule } from '@angular/common/http';
+import { ProductViewComponent } from './product-view/product-view.component';
+import { MoteurRechercheComponent } from './moteur-recherche/moteur-recherche.component';
 
 @NgModule({
   declarations: [
@@ -20,10 +23,12 @@ import { PhonePipe } from './phone.pipe';
     TetiereComponent,
     FooterComponent,
     RecapComponent,
-    PhonePipe
+    PhonePipe,
+    ProductViewComponent,
+    MoteurRechercheComponent
   ],
   imports: [
-    BrowserModule, FormsModule
+    BrowserModule, FormsModule, HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

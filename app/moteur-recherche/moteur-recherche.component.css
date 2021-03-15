@@ -1,0 +1,24 @@
+.flex {
+    display: flex;
+}
+.filter-container {
+}
+
+.icon-search {
+    width: 2em;
+}
+.input-name {
+    width: 15em;
+    margin-left: 0 !important;
+}
+.input-price {
+    width: 5em;
+    margin-left: 1.5em !important;
+}
+.span-price {
+    align-self: center;    
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    margin-left: 1.5em !important;
+}

@@ -1,0 +1,8 @@
+<app-moteur-recherche (e)="getData($event)"></app-moteur-recherche>
+<div class="products-container">
+    <div *ngFor="let p of observator | async" class="card-container">
+        <img class="card-image" src="{{p.pic}}">
+        <div class="card-name">{{p.name}}</div>
+        <div class="card-price">{{p.price | currency}}</div>
+    </div>
+</div>

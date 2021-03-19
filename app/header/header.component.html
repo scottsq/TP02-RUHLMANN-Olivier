@@ -1,3 +1,16 @@
-<div>
-    <p>Bienvenue au TP03 de NF114 !</p>
+<div class="div-bg">
+    <div class="div-links mb-4">
+        <div class="col-2 align-right div-title">
+            <img src="https://angular.kr/assets/images/logos/angular/angular.png" class="icon-title">
+            TP - 04
+        </div>
+        <div class="col-8 centered">
+            <a [routerLink]="['/']" class="link"><img class="icon" src="../../assets/images/home.png">Accueil</a>
+            <a [routerLink]="['/produits']" class="link"><img class="icon" src="../../assets/images/products.png">Produits</a>
+            <a [routerLink]="['/formulaire']" class="link"><img class="icon" src="../../assets/images/form.png">Formulaire</a>
+        </div>
+        <div class="col-2 align-left">
+            <a [routerLink]="['/panier']" class="cart"><img src="../../assets/images/panier.png" class="icon"><span class="cart-counter">{{nbElementPanier}}</span> Cart</a>
+        </div>
+    </div>
 </div>

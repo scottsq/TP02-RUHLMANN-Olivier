@@ -1,8 +1,18 @@
 <app-moteur-recherche (e)="getData($event)"></app-moteur-recherche>
-<div class="products-container">
-    <div *ngFor="let p of observator | async" class="card-container">
-        <img class="card-image" src="{{p.pic}}">
-        <div class="card-name">{{p.name}}</div>
-        <div class="card-price">{{p.price | currency}}</div>
+<div class="products-container centered">
+    <div *ngFor="let p of observator | async" class="card-container mb-4">
+        <a class="div-info" [routerLink]="['details', p.ref]">
+            <img class="card-image" src="{{p.pic}}">
+            <div class="card-name">{{p.name}}, {{p.format}} x{{p.amount}}</div>
+            <div class="card-price">{{p.price | currency}}</div>
+        </a>
+        <div class="flex">
+            <div class="col-6">
+                <input id="{{p.ref}}" type="number" min="1" class="form-control" value="1">
+            </div>
+            <div class="col-6">
+                <button class="btn btn-success btn-add" (click)="addPanier(p)">+</button>
+            </div>
+        </div>
     </div>
 </div>

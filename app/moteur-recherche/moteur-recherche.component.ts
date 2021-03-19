@@ -1,4 +1,8 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
+import { $ } from '../../../node_modules/protractor';
+import { Store } from '../../../node_modules/@ngxs/store';
+import { ProductServiceService } from '../service/product-service.service';
+import { Observable } from '../../../node_modules/rxjs';
 
 @Component({
   selector: 'app-moteur-recherche',
@@ -7,46 +11,72 @@ import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 })
 export class MoteurRechercheComponent implements OnInit {
 
-  constructor() { }
+  constructor(private pService: ProductServiceService, private store: Store) { }
 
-  private min: number = 0;
-  private max: number = 0;
-
-  ngOnInit(): void {
-  }
-
+  @Input()
+  public maxPrice: number = 1;
+  public max: number = 0;
+  private name: string = "";
+  private type: string = "";
+  private format: string = "";
   @Output()
   e: EventEmitter<any> = new EventEmitter<any>();
+  public types: Observable<any>;
+  public formats: Observable<any>;
   
+  ngOnInit(): void {
+    this.types = this.pService.getTypes();
+    this.formats = this.pService.getFormats();
+  }
+
   resetFilters() {
-    this.min = 0;
     this.max = 0;
-    document.querySelector<any>("#priceMin").value = 0;
     document.querySelector<any>("#priceMax").value = 0;
     document.querySelector<any>("#inputName").value = "";
+    document.querySelector<any>("#selectType").value = "";
+    document.querySelector<any>("#selectFormat").value = "";
     this.e.emit(null);
   }
 
   nameKeyUp(e) {
-    let val = e.target.value.toLowerCase();
-    let func;
-    if (this.max != 0) func = x => x.name.toLowerCase().includes(val) && x.price >= this.min && x.price <= this.max;
-    else func = x => x.name.toLowerCase().includes(val);
-    this.e.emit(func);
+    this.name = e.target.value.toLowerCase();
+    this.e.emit(this.buildFunc());
   }
 
-  priceMinChange(e) {
-    this.min = parseInt(e.target.value);
-  }
   priceMaxChange(e) {
     this.max = parseInt(e.target.value);
   }
 
-  betweenPrices() {
-    let val = document.querySelector<any>("#inputName").value;
-    let func;
-    if (val != "") func = x => x.name.toLowerCase().includes(val) && x.price >= this.min && x.price <= this.max;
-    else func = x => x.price >= this.min && x.price <= this.max;
-    this.e.emit(func);
+  byType() {
+    this.type = document.querySelector<any>("#selectType").value;  
+    this.e.emit(this.buildFunc());
+  }
+
+  byFormat() {
+    this.format = document.querySelector<any>("#selectFormat").value;
+    this.e.emit(this.buildFunc());
+  }
+
+  filterDisplay(e) {
+    let btn = e.target;
+    let div: any = document.getElementById("div-filter");
+    if (!div.classList.contains("wrapper-active")) {
+      div.classList.add("wrapper-active");
+      btn.innerText = btn.innerText.replace("▼", "▲");
+    }
+    else {
+      div.classList.remove("wrapper-active");
+      btn.innerText = btn.innerText.replace("▲", "▼");
+    }
+  }
+
+  buildFunc() {
+    return x => {
+      let res: boolean = x.name.toLowerCase().includes(this.name.toLowerCase());
+      if (this.max > 0) res = res && x.price < this.max;
+      if (this.type != "") res = res && x.type.toLowerCase() == this.type.toLowerCase();
+      if (this.format != "") res = res && x.format.toLowerCase() == this.format.toLowerCase();
+      return res;
+    }
   }
 }

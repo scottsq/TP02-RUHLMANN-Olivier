@@ -1,0 +1,22 @@
+<div class="centered-w text-white panier-container">
+    <div class="wrapper mt-4">
+        <div class="left mb-3 fs-4">Votre panier :</div>
+    
+        <div class="slider-container">
+            <div *ngFor="let p of products" class="product-container mb-1">
+                <div class="pic-container centered"><img src="{{p.pic}}" class="pic"></div>
+                <div class="name-container centered">{{p.name}}, {{p.format}} x{{p.amount}}</div>
+                <div class="quantity-container centered">
+                    <input type="number" min="1" value="{{p.count}}" class="form-control" (change)="amountChanged($event, p)">
+                </div>
+                <div class="price-container centered">{{p.price * p.count | currency}}</div>
+                <button class="btn btn-danger btn-floating btn-delete" (click)="deleteProduct(p)"><img src="../../assets/images/bin.png" class="trash-icon"></button>
+            </div>
+            <div *ngIf="products.length == 0" class="m-3">Votre panier est vide :(<br>Parcourez les produits de notre <a [routerLink]="['/produits']">catalogue !</a></div>
+        </div>
+        <div *ngIf="products.length > 0" class="text-end fs-4">
+            Total: {{getSum() | currency}}
+        </div>
+    </div>
+
+</div>

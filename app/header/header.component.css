@@ -1,10 +1,87 @@
-div {
+.div-bg {
     width: 100%;
-    background: #252525;
     color: #fff;
-    font-size: 3em;
-    display: flex;
 }
-p {
-    margin: auto;
+.div-title {
+    font-size: 125%;
+}
+.icon-title {
+    margin: auto !important;
+    width: 2em;
+    height: 2em;
+}
+
+.icon-container {
+    position: absolute;
+    left: .2em;
+}
+
+.centered {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.align-right {    
+    display: flex;
+    justify-content: right;
+    align-items: center;
+}
+.align-left {    
+    display: flex;
+    justify-content: left;
+    align-items: center;
+}
+
+
+.div-links {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    background: #262624;
+    position: fixed;
+}
+.link {
+    margin: 1em 2em 1em 0;
+    padding: .3em 1em .3em 1em;
+    color: white;
+    text-decoration: none;
+    border-radius: 10px;
+}
+.link:hover {
+    background: #0000003a;
+    color: white;
+    transition: all .1s;
+}
+
+
+.cart-container {
+    position: absolute;
+    right: .2em;
+}
+.cart {
+    margin: 1em 2em 1em 0;
+    padding: .3em 1em .3em 1em;
+    color: white;
+    text-decoration: none;
+    border-radius: 10px;
+    background: var(--secondaryColor);
+    transition: all .1s;
+    position: relative;
+}
+.cart:hover {
+    background: var(--secondaryDarkerColor);
+    color: white;
+    transition: all .1s;
+}
+.cart-counter {
+    margin-left: -.5em;
+    margin-right: 0.5em;
+}
+
+
+.icon {
+    width: 1em;
+    height: 1em;
+    margin-right: 1em;
+    margin-bottom: .2em;
 }

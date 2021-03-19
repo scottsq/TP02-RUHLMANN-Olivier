@@ -1,0 +1,39 @@
+<div class="centered wrapper">
+    <div *ngFor="let p of product | async" class="row detail-container">
+        <div class="col-5">
+            <img src="{{p.pic}}" class="pic">
+        </div>
+        <div class="col-6 centered-w text-white content-wrapper">
+            <div class="title centered-w mb-4 fs-4">{{p.name}}</div>
+            <div class="desc centered-h content-wrapper">
+                <div class="row mb-4">
+                    <div class="col-6"><span>Référence: </span></div>
+                    <div class="col-6">[{{p.ref}}]</div>
+                </div>
+                <div class="row mb-4">
+                    <div class="col-6"><span>Format: </span></div>
+                    <div class="col-6">{{p.format}} x{{p.amount}}</div>
+                </div>
+                <div class="row mb-4">
+                    <div class="col-6"><span>Prix unitaire: </span></div>
+                    <div class="col-6">{{p.price | currency}}</div>
+                </div>
+                <div class="row mb-4">
+                    <div class="col-6"><span>Quantité: </span></div>
+                    <div class="col-6"><input type="number" class="form-control amount" min="1" id="amount" value="1"></div>
+                </div>
+                <div><button class="btn btn-success" (click)="addToCart(p)">Ajouter au panier</button></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="related-container">
+        <span class="fs-4 text-white mb-4">Produits similaires: </span><br>
+        <div class="related-products">
+            <a *ngFor="let pr of relatedProducts | async" class="p-container centered" [routerLink]="['/produits/details', pr.ref]">
+                <img src="{{pr.pic}}" class="p-img">
+                <span>{{pr.name}}</span>
+            </a>
+        </div>
+    </div>
+</div>

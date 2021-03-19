@@ -1,1 +1,27 @@
 /* You can add global styles to this file, and also import other style files */
+:root {
+    --primaryColor: #2fb1ff;
+    --primaryDarkerColor: #2673e7;
+    --secondaryColor: #c55dff;
+    --secondaryDarkerColor: #913bbe;
+    --tertiaryColor: #d4fff6;
+}
+html {
+    font-size: 1.25vmax;
+}
+.flex {
+    display: flex;
+}
+.centered {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.centered-w {
+    display: flex;
+    align-items: center;
+}
+.centered-h {
+    display: flex;
+    justify-content: center
+}

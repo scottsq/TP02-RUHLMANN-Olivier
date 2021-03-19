@@ -7,6 +7,6 @@ import { environment } from '../environments/environment';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'tp02';
+  title = 'tp04';
   env = environment;
 }

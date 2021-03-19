@@ -1,17 +1,38 @@
-<div class="filter-container">
-    <div class="flex">
-        <img src="https://cdn2.iconfinder.com/data/icons/ios-7-icons/50/search-512.png" class="icon-search m-4">
-        <input id="inputName" type="text" placeholder="Name of product" class="form-control input-name m-4" (keyup)="nameKeyUp($event)">
-    </div>
-    <div class="flex">
-        <span class="span-price ml-4">Price between</span>
-        <input id="priceMin" type="number" value="0" class="form-control input-price" (change)="priceMinChange($event)" min="0">
-        <span class="span-price">and</span>
-        <input id="priceMax" type="number" value="0" class="form-control input-price" (change)="priceMaxChange($event)" min="0">
-        <button class="btn btn-outline-primary span-price" (click)="betweenPrices()">Validate</button>
-    </div>
-    <div class="flex">
-        <button (click)="resetFilters()" class="btn btn-primary m-4">Reset filters</button>
+<div class="filter-container centered">
+
+    <div class="wrapper centered-w" id="div-filter">
+        <div class="first-line mb-4">
+            <img src="../../assets/images/loupe.png" class="icon-search">
+            <input id="inputName" type="text" placeholder="Nom du produit" class="form-control input-name" (keyup)="nameKeyUp($event)">
+
+            <button class="btn btn-outline-primary" (click)="filterDisplay($event)">Recherche avancée ▼</button>
+
+        </div>
+        
+        <div class="col-md-4 col-sm-6 flex centered mb-2">
+            <span class="span-price">Prix inférieur à </span>
+            <input id="priceMax" type="number" value="0" class="form-control input-price" (change)="priceMaxChange($event)" min="0">   
+        </div>
+        <div class="col-md-4 col-sm-6 flex centered mb-2">
+            <span>Type: </span>
+            <select class="form-control span-price" id="selectType" (change)="byType()">
+                <option value="">Tous</option>
+                <option *ngFor="let t of types | async" value="{{t.name}}">{{t.name}}</option>
+            </select>
+        </div>
+
+        <div class="col-md-4 col-sm-6 flex centered mb-2">
+            <span>Format: </span>
+            <select class="form-control span-price" id="selectFormat" (change)="byFormat()">
+                <option value="">Tous</option>
+                <option *ngFor="let t of formats | async" value="{{t.name}}">{{t.name}}</option>
+            </select>
+        </div>
+
+        <div class="flex">
+            <button class="btn btn-primary span-price" (click)="byType()">Rechercher !</button>
+            <button (click)="resetFilters()" class="btn btn-outline-warning m-4">Réinitialiser les filtres</button>
+        </div>
     </div>
 </div>
     

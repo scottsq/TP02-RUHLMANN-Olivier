@@ -1,0 +1,21 @@
+.title {
+    font-size: 4em;
+    margin-bottom: .5em;
+}
+
+.desc {
+    text-align: center;
+    font-size: 1.2em;
+}
+
+.desc span {
+    color: var(--secondaryColor);
+}
+
+.desc a {
+    color: var(--primaryColor);
+    text-decoration: none;
+}
+.desc :is(a, span) :hover {
+    color: var(--primaryDarkerColor);
+}

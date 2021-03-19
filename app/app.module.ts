@@ -11,8 +11,17 @@ import { FooterComponent } from './footer/footer.component';
 import { RecapComponent } from './recap/recap.component';
 import { PhonePipe } from './phone.pipe';
 import { HttpClientModule } from '@angular/common/http';
-import { ProductViewComponent } from './product-view/product-view.component';
-import { MoteurRechercheComponent } from './moteur-recherche/moteur-recherche.component';
+import { RouterModule, Routes } from '@angular/router';
+import { HomeComponent } from './home/home.component';
+import { NgxsModule } from '@ngxs/store';
+import { PanierState } from "../shared/states/panierState";
+import { PanierViewComponent } from './panier-view/panier-view.component';
+const appRoutes: Routes = [
+  { path: '', component: HomeComponent },
+  { path: 'produits', loadChildren: () => import("./products-module/products-module.module").then(m => m.ProductsModuleModule) },
+  { path: 'formulaire', component: FormulaireComponent },
+  { path: 'panier', component: PanierViewComponent }
+]
 
 @NgModule({
   declarations: [
@@ -24,11 +33,13 @@ import { MoteurRechercheComponent } from './moteur-recherche/moteur-recherche.co
     FooterComponent,
     RecapComponent,
     PhonePipe,
-    ProductViewComponent,
-    MoteurRechercheComponent
+    HomeComponent,
+    PanierViewComponent
   ],
   imports: [
-    BrowserModule, FormsModule, HttpClientModule
+    BrowserModule, FormsModule, HttpClientModule,
+    RouterModule.forRoot(appRoutes),
+    NgxsModule.forRoot([PanierState])
   ],
   providers: [],
   bootstrap: [AppComponent]

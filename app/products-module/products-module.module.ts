@@ -3,18 +3,16 @@ import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
 import { ProductViewComponent } from '../product-view/product-view.component';
 import { MoteurRechercheComponent } from '../moteur-recherche/moteur-recherche.component';
-import { DetailComponent } from '../detail/detail.component';
 
 const appRoutes: Routes = [
   { path: "", component: ProductViewComponent },
-  { path: "details/:ref", component: DetailComponent }
+  { path: "details/:ref", loadChildren: () => import("../detail-module/detail-module.module").then(m => m.DetailModuleModule) }
 ]
 
 @NgModule({
   declarations: [
     ProductViewComponent,
-    MoteurRechercheComponent,
-    DetailComponent
+    MoteurRechercheComponent
   ],
   imports: [
     CommonModule,

@@ -1,0 +1,10 @@
+[
+    {
+        "id": 0,
+        "login": "toto",
+        "password": "tutu",
+        "name": "Personne Random",
+        "phone": "0670849865",
+        "mail": "random_person@mail.dom"
+    }
+]

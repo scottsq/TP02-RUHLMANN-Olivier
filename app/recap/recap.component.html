@@ -2,17 +2,17 @@
 
 <app-formulaire (messageEvent)="receiveMessage($event)"></app-formulaire>
 
-<div *ngIf="form != null" class="container mt-4 mb-4">
+<div *ngIf="form != null" class="text-white container mt-4 mb-4">
     <h3 class="mb-4">Recap:</h3>
-        <span>fistname:</span> {{form.firstname}} <br>
-        <span>lastname:</span> {{form.lastname}} <br>
-        <span>civility:</span> {{form.civility}} <br>
-        <span>email:</span> {{form.email}} <br>
-        <span>phone:</span> {{form.phone | phone}} <br>
-        <span>address:</span> {{form.address}} <br>
-        <span>city:</span> {{form.city}} <br>
-        <span>state:</span> {{form.state}} <br>
-        <span>zip:</span> {{form.zip}} <br>
-        <span>login:</span> {{form.login}} <br>
-        <span>password:</span> {{form.password}} <br>
+    <span>fistname:</span> {{form.firstname}} <br>
+    <span>lastname:</span> {{form.lastname}} <br>
+    <span>civility:</span> {{form.civility}} <br>
+    <span>email:</span> {{form.email}} <br>
+    <span>phone:</span> {{form.phone | phone}} <br>
+    <span>address:</span> {{form.address}} <br>
+    <span>city:</span> {{form.city}} <br>
+    <span>state:</span> {{form.state}} <br>
+    <span>zip:</span> {{form.zip}} <br>
+    <span>login:</span> {{form.login}} <br>
+    <span>password:</span> {{form.password}} <br>
 </div>

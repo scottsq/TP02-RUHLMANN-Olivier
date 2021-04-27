@@ -8,11 +8,14 @@ import { FormsModule } from '@angular/forms';
 import { TetiereComponent } from './tetiere/tetiere.component';
 import { FooterComponent } from './footer/footer.component';
 import { PhonePipe } from './phone.pipe';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './home/home.component';
 import { NgxsModule } from '@ngxs/store';
 import { PanierState } from "../shared/states/panierState";
+import { ConnectionState } from "../shared/states/connectionState";
+import { ApiHttpInterceptor } from './api-http.interceptor';
+
 const appRoutes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'produits', loadChildren: () => import("./products-module/products-module.module").then(m => m.ProductsModuleModule) },
@@ -32,9 +35,11 @@ const appRoutes: Routes = [
   imports: [
     BrowserModule, FormsModule, HttpClientModule,
     RouterModule.forRoot(appRoutes),
-    NgxsModule.forRoot([PanierState])
+    NgxsModule.forRoot([PanierState, ConnectionState])
   ],
-  providers: [],
+  providers: [
+    {provide: HTTP_INTERCEPTORS, useClass: ApiHttpInterceptor, multi: true}
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

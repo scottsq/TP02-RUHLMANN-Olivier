@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import { Action, State, StateContext, Selector } from '@ngxs/store'
-import { removeItem } from '@ngxs/store/operators'
 import { AddReference, DelReference } from "../actions/panier.action";
 import { PanierStateModel } from "./panierStateModel";
 

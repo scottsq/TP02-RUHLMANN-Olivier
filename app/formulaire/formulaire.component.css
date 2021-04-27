@@ -9,3 +9,7 @@
     color: rgb(219, 62, 34);
     font-size: .75em;
 }
+
+.hidden {
+    display: none;
+}

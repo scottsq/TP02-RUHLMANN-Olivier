@@ -1,8 +1,8 @@
 import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
-import { $ } from '../../../node_modules/protractor';
-import { Store } from '../../../node_modules/@ngxs/store';
-import { ProductServiceService } from '../service/product-service.service';
-import { Observable } from '../../../node_modules/rxjs';
+import { $ } from 'protractor';
+import { Store } from '@ngxs/store';
+import { ProductServiceService } from '../services/product/product-service.service';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-moteur-recherche',

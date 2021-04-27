@@ -15,7 +15,8 @@
             <div *ngIf="products.length == 0" class="m-3">Votre panier est vide :(<br>Parcourez les produits de notre <a [routerLink]="['/produits']">catalogue !</a></div>
         </div>
         <div *ngIf="products.length > 0" class="text-end fs-4">
-            Total: {{getSum() | currency}}
+            <div>Total: {{getSum() | currency}}</div>
+            <div><button class="btn btn-primary" (click)="buy()">Passer commande</button></div>
         </div>
     </div>
 

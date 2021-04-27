@@ -54,4 +54,8 @@ export class PanierViewComponent implements OnInit {
   getSum() {
     return this.products.reduce((acc, item) => {return acc + item.price * item.count}, 0);
   }
+
+  buy() {
+    alert(`Redirection vers formulaire de paiement pour $${this.getSum()}`);
+  }
 }

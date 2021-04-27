@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { ProductServiceService } from '../service/product-service.service';
-import { Observable } from '../../../node_modules/rxjs';
-import { Store } from '../../../node_modules/@ngxs/store';
+import { ProductServiceService } from '../services/product/product-service.service';
+import { Observable } from 'rxjs';
+import { Store } from '@ngxs/store';
 import { AddReference } from '../../shared/actions/panier.action';
 
 @Component({

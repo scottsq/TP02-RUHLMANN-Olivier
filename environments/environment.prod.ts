@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  baseUrl: "/assets/"
+  baseUrl: "https://tp06-ruhlmann-olivier.herokuapp.com/api/"
 };

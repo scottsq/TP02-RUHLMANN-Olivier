@@ -2,12 +2,16 @@
     <div class="div-links mb-4">
         <div class="col-2 align-right div-title">
             <img src="https://angular.kr/assets/images/logos/angular/angular.png" class="icon-title">
-            TP - 04
+            TP - 06
         </div>
         <div class="col-8 centered">
             <a [routerLink]="['/']" class="link"><img class="icon" src="../../assets/images/home.png">Accueil</a>
-            <a [routerLink]="['/produits']" class="link"><img class="icon" src="../../assets/images/products.png">Produits</a>
-            <a [routerLink]="['/client']" class="link"><img class="icon" src="../../assets/images/user.png">Compte</a>
+            <a [routerLink]="user?['/produits']:['/client']" class="link"><img class="icon" src="../../assets/images/products.png">Produits</a>
+            <a *ngIf="user == null" [routerLink]="['/client']" class="link"><img class="icon" src="../../assets/images/user.png">Connexion</a>
+            <a *ngIf="user != null" (click)="logout()" [routerLink]="['/client']" class="link"><img class="icon" src="../../assets/images/disconnect.png">{{user.name}}</a>
+        </div>
+        <div>
+            
         </div>
         <div class="col-2 align-left">
             <a [routerLink]="['/panier']" class="cart"><img src="../../assets/images/panier.png" class="icon"><span class="cart-counter">{{nbElementPanier}}</span> Panier</a>

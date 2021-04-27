@@ -1,8 +1,26 @@
 <div class="container-fluid centered mb-4">
     <div class="col-6 centered text-white">
-        
-        <form class="row g-3" id="form">
-            <div class="col-5">
+        <h3>Connexion</h3>
+        <div class="hidden val-error" id="error">Identifiants incorrects</div>
+        <form class="row g-3 mt-4" id="form">
+            <div class="row mb-4">
+                <div class="col-12">
+                    <label for="txtLogin" class="form-label">Identifiant:</label>
+                    <input type="text" class="form-control" placeholder="Identifiant" (keyup)="updateInput($event, 'login')">
+                </div>
+            </div>
+            <div class="row mb-4">
+                <div class="col-12">
+                    <label for="txtPass" class="form-label">Mot de passe:</label>
+                    <input type="password" class="form-control" placeholder="Mot de passe" (keyup)="updateInput($event, 'password')">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12 flex centered">
+                    <button class="btn btn-primary w-100" type="button" (click)="login()">Se connecter</button>
+                </div>
+            </div>
+            <!-- <div class="col-5">
                 <label for="inputFirstname" class="form-label">Firstname:</label>
                 <input type="text" class="form-control" placeholder="3 to 35 characters" (keyup)="updateInput($event, 'firstname')">
                 <div *ngIf="!satisfyPattern('firstname') && validatedOnce" class="val-error">
@@ -89,7 +107,7 @@
             </div>
             <div class="col-12 centered">
                 <button type="button" class="btn btn-primary" (click)="submitClick()">Submit</button>
-            </div>
+            </div> -->
         </form>
 
     </div>

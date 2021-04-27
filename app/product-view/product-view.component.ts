@@ -1,9 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { ProductServiceService } from '../service/product-service.service';
+import { ProductServiceService } from '../services/product/product-service.service';
 import { Product } from '../../Entity/Product';
-import { Observable } from '../../../node_modules/rxjs';
+import { Observable } from 'rxjs';
 import { Store } from '@ngxs/store';
 import { AddReference } from '../../shared/actions/panier.action';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-product-view',
@@ -12,13 +13,13 @@ import { AddReference } from '../../shared/actions/panier.action';
 })
 export class ProductViewComponent implements OnInit {
 
-  constructor(private pService: ProductServiceService, private store: Store) { }
+  constructor(private pService: ProductServiceService, private store: Store, private router: Router) { }
 
   public observator: Observable<any>;
 
   ngOnInit() {
+    this.store.select(state => state.connection.connection).subscribe(c => { if (c == null) this.router.navigate(["/client"])});
     this.observator = this.pService.getData();
-    
   }
 
   async getData(e = null) {    

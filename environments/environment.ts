@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  baseUrl: '/assets/'
+  baseUrl: 'https://tp06-ruhlmann-olivier.herokuapp.com/api/' 
 };
 
 /*

@@ -1,7 +1,7 @@
 <app-moteur-recherche (e)="getData($event)"></app-moteur-recherche>
 <div class="products-container centered">
     <div *ngFor="let p of observator | async" class="card-container mb-4">
-        <a class="div-info" [routerLink]="['details', p.ref]">
+        <a class="div-info" [routerLink]="['details', p.ref.trim()]">
             <img class="card-image" src="{{p.pic}}">
             <div class="card-name">{{p.name}}, {{p.format}} x{{p.amount}}</div>
             <div class="card-price">{{p.price | currency}}</div>

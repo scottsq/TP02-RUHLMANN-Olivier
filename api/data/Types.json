@@ -1,0 +1,22 @@
+[
+    {
+        "id": 0,
+        "name": "Décoratif"
+    },
+    {
+        "id": 1,
+        "name": "Fruit"
+    },
+    {
+        "id": 2,
+        "name": "Légume"
+    },
+    {
+        "id": 3,
+        "name": "Arbuste"
+    },
+    {
+        "id": 4,
+        "name": "Aromatique"
+    }
+]

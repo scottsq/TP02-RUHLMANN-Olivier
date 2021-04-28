@@ -1,0 +1,132 @@
+[
+    {
+        "id": 0,
+        "name": "Roses",
+        "price": 2.99,
+        "pic": "https://www.comptoirjoffrin.com/7946-large_default/une-rose.jpg",
+        "type": "Décoratif",
+        "format": "graines",
+        "amount": 10,
+        "ref": "20210318D0"
+    },
+    {
+        "id": 1,
+        "name": "Chardon",
+        "price": 5.99,
+        "pic": "https://superdiet.com/wp-content/uploads/2019/06/chardon_marie_macro-1.png",
+        "type": "Décoratif",
+        "format": "graines",
+        "amount": 10,
+        "ref": "20210318D1"
+    },
+    {
+        "id": 2,
+        "name": "Houx",
+        "price": 18.99,
+        "pic": "https://www.leaderplant.com/media/catalog/product/h/o/houx-commun1.jpg",
+        "type": "Arbuste",
+        "format": "arbuste",
+        "amount": 1,
+        "ref": "20210318A0"
+    },
+    {
+        "id": 3,
+        "name": "Groseiller",
+        "price": 21.54,
+        "pic": "https://www.coursesu.com/dw/image/v2/BBQX_PRD/on/demandware.static/-/Sites-digitalu-master-catalog/default/dw88c2173b/3519690655072_A1N1_5032514_S13.png?sw=250&sh=250&sm=fit",
+        "type": "Fruit",
+        "format": "arbuste",
+        "amount": 1,
+        "ref": "20210318F0"
+    },
+    {
+        "id": 4,
+        "name": "Pommier",
+        "price": 9.17,
+        "pic": "https://img1.picmix.com/output/stamp/normal/3/3/6/1/1601633_856ba.png",
+        "type": "Fruit",
+        "format": "arbuste",
+        "amount": 1,
+        "ref": "20210318F1"
+    },
+    {
+        "id": 5,
+        "name": "Carottes",
+        "price": 1.99,
+        "pic": "https://morel-primeurs.com/910-large_default/celeri-branche-la-botte-env-800g.jpg",
+        "type": "Légume",
+        "format": "graines",
+        "amount": 10,
+        "ref": "20210318L0"
+    },
+    {
+        "id": 6,
+        "name": "Azalée",
+        "price": 3.49,
+        "pic": "https://whatflower.net/imgmini/15.png",
+        "type": "Décoratif",
+        "format": "graines",
+        "amount": 10,
+        "ref": "20210318D2"
+    },
+    {
+        "id": 7,
+        "name": "Acacia",
+        "price": 17.99,
+        "pic": "https://whatflower.net/imgmini/20.png",
+        "type": "Arbuste",
+        "format": "arbuste",
+        "amount": 1,
+        "ref": "20210318A1"
+    },
+    {
+        "id": 8,
+        "name": "Ananas",
+        "price": 12.88,
+        "pic": "https://whatflower.net/imgmini/34.png",
+        "type": "Fruit",
+        "format": "arbuste",
+        "amount": 1,
+        "ref": "20210318F2"
+    },
+    {
+        "id": 9,
+        "name": "Bambou",
+        "price": 7.99,
+        "pic": "https://whatflower.net/imgmini/55.png",
+        "type": "Décoratif",
+        "format": "graines",
+        "amount": 10,
+        "ref": "20210319D0"
+    },
+    {
+        "id": 10,
+        "name": "Curcuma",
+        "price": 4.99,
+        "pic": "https://whatflower.net/imgmini/116.png",
+        "type": "Aromatique",
+        "format": "graines",
+        "amount": 10,
+        "ref": "20210319R0"
+    },
+    {
+        "id": 11,
+        "name": "Citronier",
+        "price": 13.99,
+        "pic": "https://whatflower.net/imgmini/119.png",
+        "type": "Fruit",
+        "format": "arbuste",
+        "amount": 1,
+        "ref": "20210319F0"
+    },
+    {
+        "id": 12,
+        "name": "Piment",
+        "price": 4.99,
+        "pic": "https://whatflower.net/imgmini/120.png",
+        "type": "Légume",
+        "format": "graines",
+        "amount": 10,
+        "ref": "20210319L1"
+    }
+]
